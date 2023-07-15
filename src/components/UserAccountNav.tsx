@@ -17,7 +17,7 @@ const UserAccountNav = ({ user }: UserAccountNavProps) => {
             ++++++++
             <DropdownMenuTrigger>
                 <UserAvatar
-                    user={{ name: user.name || null, image: null }}
+                    user={{ name: user.name || null, image: user.image || null }}
                     className='w-8 h-8'
                 />
             </DropdownMenuTrigger>
@@ -30,7 +30,9 @@ const UserAccountNav = ({ user }: UserAccountNavProps) => {
                         {user.email && <p className='w-[200px] truncate text-sm text-muted-foreground'>{user.email}</p>}
                     </div>
                 </div>
+
                 <DropdownMenuSeparator />
+
                 <DropdownMenuItem asChild>
                     <Link href='/'>Feed</Link>
                 </DropdownMenuItem>
@@ -42,7 +44,9 @@ const UserAccountNav = ({ user }: UserAccountNavProps) => {
                 <DropdownMenuItem asChild>
                     <Link href='/settings'>Settings</Link>
                 </DropdownMenuItem>
+
                 <DropdownMenuSeparator />
+
                 <DropdownMenuItem
                     className='cursor-pointer'
                     onSelect={(event) => {

@@ -19,10 +19,11 @@ export function UserAvatar({ user, ...props }: UserAvatarProps) {
                         src={user.image}
                         alt='profile picture'
                         referrerPolicy='no-referrer'
+                        sizes='100%'
                     />
                 </div>
             ) : (
-                <AvatarFallback className='active:outline-none focus:outline-none focus:border-none active:border-none'>
+                <AvatarFallback>
                     <span className='sr-only'>{user?.name}</span>
                     <Icons.user className='w-5 h-5' />
                 </AvatarFallback>
